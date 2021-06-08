@@ -27,19 +27,60 @@ const images = [
     },
   ];
 
+//   1 вариант 
+
+// const galleryEl = document.querySelector('#gallery');
+// galleryEl.classList.add("gallery")
+// console.log(galleryEl)
+
+
+//  const elements = images.map(image => {
+//      const imgEl = document.createElement('img');
+// imgEl.classList.add("gallery__img")
+//      imgEl.src = image.url;
+//      imgEl.alt = image.alt;
+
+//     const itemEl = document.createElement('li');
+//     itemEl.classList.add('gallery__items');
+//     itemEl.appendChild(imgEl)
+
+//     return itemEl
+
+
+
+//  });
+
+//  galleryEl.append(...elements)
+
+
+
+// *******************************************************************
+
+  // 2 вариант 
+ 
 const galleryEl = document.querySelector('#gallery');
-console.log(galleryEl)
+galleryEl.classList.add("gallery")
 
 
- const elements = images.map(image => {
-     const imgEl = document.createElement('img');
-     imgEl.src = image.url;
-     imgEl.alt = image.alt;
 
-     return imgEl
+const makeImages = images => {
+return images.map(image => {
+    
+    const imgEl = document.createElement('img');
+    imgEl.classList.add("gallery__img")
+    imgEl.src = image.url;
+    imgEl.alt = image.alt;
 
- });
+    const itemEl = document.createElement('li');
+    itemEl.classList.add('gallery__items');
+    itemEl.appendChild(imgEl)
 
+    return itemEl
+});
+}
+
+const elements = makeImages(images);
  galleryEl.append(...elements)
 
- 
+ galleryEl.classList.add("gallery")
+
