@@ -11,3 +11,24 @@
 
 // Для добавления стилей, используй CSS-классы valid и invalid.
 
+
+const inputEl = document.querySelector('input#validation-input')
+// console.log(inputEl)
+
+inputEl.addEventListener('blur', onInputBlur)
+
+function onInputBlur(event) {
+    inputEl.textContent  = event.currentTarget.value;
+    
+    if (inputEl.textContent.length !== Number(inputEl.getAttribute('data-length'))) {
+        
+        inputEl.classList.add('invalid');
+        inputEl.classList.remove('valid')
+    }
+    
+    else
+    { inputEl.classList.add('valid') 
+    inputEl.classList.remove('invalid')
+};
+    
+}
