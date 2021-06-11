@@ -17,5 +17,4 @@ refs.inputEl.addEventListener('input', onFontSizeChange)
 
 function onFontSizeChange(event) {
     refs.spanEl.style.fontSize = `${event.currentTarget.value}px`
- 
 }
