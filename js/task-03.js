@@ -46,8 +46,6 @@ const images = [
 
 //     return itemEl
 
-
-
 //  });
 
 //  galleryEl.append(...elements)
@@ -60,7 +58,6 @@ const images = [
  
 const galleryEl = document.querySelector('#gallery');
 galleryEl.classList.add("gallery")
-
 
 
 const makeImages = images => {
