@@ -56,28 +56,49 @@ const images = [
 
   // 2 вариант 
  
+// const galleryEl = document.querySelector('#gallery');
+// galleryEl.classList.add("gallery")
+
+
+// const makeImages = images => {
+// return images.map(image => {
+    
+//     const imgEl = document.createElement('img');
+//     imgEl.classList.add("gallery__img")
+//     imgEl.src = image.url;
+//     imgEl.alt = image.alt;
+
+//     const itemEl = document.createElement('li');
+//     itemEl.classList.add('gallery__items');
+//     itemEl.appendChild(imgEl)
+
+//     return itemEl
+// });
+// }
+
+// const elements = makeImages(images);
+//  galleryEl.append(...elements)
+
+//  galleryEl.classList.add("gallery")
+
+ // 3 вариант 
+
 const galleryEl = document.querySelector('#gallery');
 galleryEl.classList.add("gallery")
+console.log(galleryEl)
+
+images.forEach(image => console.log(image));
+const src = image.url
+const alt = image.alt
+const itemEl = `<li><img> src="${url}" alt= "${alt}<img><li>`
+images.push(itemEl)
 
 
-const makeImages = images => {
-return images.map(image => {
-    
-    const imgEl = document.createElement('img');
-    imgEl.classList.add("gallery__img")
-    imgEl.src = image.url;
-    imgEl.alt = image.alt;
 
-    const itemEl = document.createElement('li');
-    itemEl.classList.add('gallery__items');
-    itemEl.appendChild(imgEl)
+const makeGallery = images => {
+  const { url, alt } = images;
+  return `<li><img src=${url} alt=${alt}></li>`;
+};
 
-    return itemEl
-});
-}
 
-const elements = makeImages(images);
- galleryEl.append(...elements)
-
- galleryEl.classList.add("gallery")
-
+galleryEl.insertAdjacentHTML('beforeend', images.join(' '))

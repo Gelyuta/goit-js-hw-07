@@ -15,34 +15,66 @@ const ingredients = [
     'Приправы',
   ];
 
+// 1 вариант
+// const itemEl = document.createElement('li');
+// itemEl.textContent = 'Картошка'
+// // console.log(itemEl)
 
-const itemEl = document.createElement('li');
-itemEl.textContent = 'Картошка'
-// console.log(itemEl)
+
+// const itemEl2 = document.createElement('li');
+// itemEl2.textContent = 'Грибы'
+// // console.log(itemEl2)
+
+// const itemEl3 = document.createElement('li');
+// itemEl3.textContent = 'Чеснок'
+// // console.log(itemEl3)
+
+// const itemEl4 = document.createElement('li');
+// itemEl4.textContent = 'Помидоры'
+// // console.log(itemEl4)
+
+// const itemEl5 = document.createElement('li');
+// itemEl5.textContent = 'Зелень'
+// // console.log(itemEl5)
+
+// const itemEl6 = document.createElement('li');
+// itemEl6.textContent = 'Приправы'
+// // console.log(itemEl6)
 
 
-const itemEl2 = document.createElement('li');
-itemEl2.textContent = 'Грибы'
-// console.log(itemEl2)
+// const ingredientsEl = document.querySelector('#ingredients');
+// ingredientsEl.append(itemEl, itemEl2, itemEl3, itemEl4, itemEl5, itemEl6)
+// console.log(ingredientsEl)
 
-const itemEl3 = document.createElement('li');
-itemEl3.textContent = 'Чеснок'
-// console.log(itemEl3)
+// ****************************************************************************
+// 2 вариант
 
-const itemEl4 = document.createElement('li');
-itemEl4.textContent = 'Помидоры'
-// console.log(itemEl4)
+const makeIngredients = ingredients => {
+  return ingredients.map((ingredient) => {
+    const itemLEl = document.createElement('li');
+    itemLEl.textContent = ingredient;
+    return itemLEl;
+  });
+}
 
-const itemEl5 = document.createElement('li');
-itemEl5.textContent = 'Зелень'
-// console.log(itemEl5)
-
-const itemEl6 = document.createElement('li');
-itemEl6.textContent = 'Приправы'
-// console.log(itemEl6)
-
+const elements = makeIngredients(ingredients);
 
 const ingredientsEl = document.querySelector('#ingredients');
-ingredientsEl.append(itemEl, itemEl2, itemEl3, itemEl4, itemEl5, itemEl6)
-console.log(ingredientsEl)
+ingredientsEl.append(...elements);
+
+// *****************************************************************************
+// 3 вариант
+
+// const ingredientsEl = document.querySelector('#ingredients');
+// ingredients.map(elem => {
+// const itemEl = document.createElement('li');
+// itemEl.textContent = elem
+
+// ingredientsEl.appendChild(itemEl)
+ 
+//   return itemEl
+// });
+
+
+
 

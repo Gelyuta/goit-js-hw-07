@@ -1,7 +1,7 @@
 .gallery {
   display: flex;
   justify-content: space-between;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 .gallery__items {
@@ -14,8 +14,8 @@
 
 .gallery__img {
   display: block;
-  max-height: 350px;
-  max-width: 600px;
+  height: 350px;
+  width: 600px;
 
 }
 
