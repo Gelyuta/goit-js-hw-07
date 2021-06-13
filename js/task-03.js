@@ -81,24 +81,26 @@ const images = [
 
 //  galleryEl.classList.add("gallery")
 
+// *********************************************************************
+
  // 3 вариант 
+
+// const makeGallery = images => {
+//   const { url, alt } = images;
+//   return `<li class = "gallery__items" ><img class = "gallery__img" src=${url} alt=${alt}></li>`;
+// };
+
+// console.log(makeGallery(images))
+
+const makeImages = images => {
+return images.map(image => {
+  return `<li class = "gallery__items" ><img class = "gallery__img" src=${image.url} alt=${image.alt}></li>`; 
+}).join(' ');
+}
+console.log(makeImages(images))
 
 const galleryEl = document.querySelector('#gallery');
 galleryEl.classList.add("gallery")
-console.log(galleryEl)
 
-images.forEach(image => console.log(image));
-const src = image.url
-const alt = image.alt
-const itemEl = `<li><img> src="${url}" alt= "${alt}<img><li>`
-images.push(itemEl)
+galleryEl.insertAdjacentHTML('beforeend', makeImages(images))
 
-
-
-const makeGallery = images => {
-  const { url, alt } = images;
-  return `<li><img src=${url} alt=${alt}></li>`;
-};
-
-
-galleryEl.insertAdjacentHTML('beforeend', images.join(' '))
